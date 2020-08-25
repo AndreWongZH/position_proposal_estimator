@@ -46,6 +46,9 @@ add_library(multiview_visualiser
     src/multiview_visualiser.cpp
 )
 
+#add_library(depth_verification
+#    src/depth_verification.hpp
+#)
 
 target_link_libraries(multiview_visualiser
 PRIVATE
@@ -57,6 +60,9 @@ PUBLIC
 add_executable(multiview_geometry_test
     src/multiview_geometry_test.cpp
 )
+add_executable(depth_verification_test
+    src/depth_verification_test.cpp
+)
 
 # target_include_directories(multiview_geometry_test
 # PRIVATE
@@ -66,6 +72,12 @@ add_executable(multiview_geometry_test
 target_link_libraries(multiview_geometry_test
 PRIVATE
     # ${YAML_CPP_LIBRARIES}
+    yaml-cpp
+    multiview_visualiser
+    ${OpenCV_LIBS}
+)
+
+target_link_libraries(depth_verification_test
     yaml-cpp
     multiview_visualiser
     ${OpenCV_LIBS}
