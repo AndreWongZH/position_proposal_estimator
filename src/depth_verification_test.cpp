@@ -18,7 +18,7 @@ int main(){
     std::vector<std::string> imageFileNames = {"../depth_verification_data/" + imgl, "../depth_verification_data/" + imgr};
 
     DepthVerification dv;           
-    dv.parseYamlConfig("../data/t265-ds-none.yaml");
+    dv.parseYamlConfig("../depth_verification_data/t265-ds-none.yaml");
     dv.readImageFiles(imageFileNames);
     dv.start();
 

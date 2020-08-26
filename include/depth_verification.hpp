@@ -241,7 +241,7 @@ void DepthVerification::findWorldPoint(){
     std::cout << q0.transpose() << std::endl << q1.transpose() << std::endl;
 
     std::cout << "unit_vector (x,y,z), distance:\n";
-    std::cout << worldPoint.head(3).transpose() << 1/worldPoint(3) << std::endl;
+    std::cout << worldPoint.head(3).transpose() << " " << 1/worldPoint(3) << std::endl;
 
     std::cout << "actual coordinates:\n";
     std::cout << worldPoint.head(3).transpose() / worldPoint(3) <<std::endl<<std::endl;
