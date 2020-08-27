@@ -107,6 +107,10 @@ void DepthVerification::readImageFiles(const std::vector<std::string> filenames)
 
     for(auto filename : filenames){
         cv::Mat image = cv::imread(filename, cv::IMREAD_GRAYSCALE);
+        if(image.empty()){
+            std::cout << "Error loading image: " << filename << std::endl;
+            exit(1);
+        }
         // std::cout << image.size() << std::endl;
         images.push_back(image);
     }
