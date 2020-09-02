@@ -53,15 +53,14 @@ PUBLIC
     ${TBB_LIBRARIES}
 )
 
-add_library(depth_verification
-    src/depth_verification.cpp
-)
+# add_library(depth_verification
+#     include/depth_verification.hpp
+# )
 
-target_link_libraries(depth_verification
-    yaml-cpp
-    ${OpenCV_LIBS}
-    ${Pangolin_LIBRARIES}
-)
+# target_link_libraries(depth_verification
+#     yaml-cpp
+#     ${OpenCV_LIBS}
+# )
 
 add_executable(multiview_geometry_test
     src/multiview_geometry_test.cpp
@@ -84,5 +83,7 @@ PRIVATE
 )
 
 target_link_libraries(depth_verification_test
-    depth_verification
+    yaml-cpp
+    ${OpenCV_LIBS}
+    ${Pangolin_LIBRARIES}
 )
